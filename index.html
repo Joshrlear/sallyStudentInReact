@@ -4,11 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Sally Student in React</title>
 </head>
 <body>
+    <div id="application-header"></div>
+    <div id="application-main"></div>
+    <div id="application-footer"></div>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        function Header(props) {
+            console.log(props)
+            return (
+                <header role="heading" >
+                    {props.children}
+                </header>
+            );
+        }
+
+        function Main(props) {
+            console.log(props)
+            return (
+                <main role="main">
+                    {props.children}
+                </main>
+            );
+        }
+
+        function Footer(props) {
+            console.log(props)
+            return (
+                <footer role="footer" className="footer">
+                    {props.children}
+                </footer>
+            );
+        }
+
+        ReactDOM.render(
+            <Header id="js-header" className="header">
+                <h1>Sally Student Resume</h1>
+                <p><em>In React</em></p>
+            </Header>,
+            document.querySelector('#application-header')
+        );
+        ReactDOM.render(
+            <Main>
+                <section className="employment">
+                    <h2>Employment History</h2>
+                    <ul>
+                        <li>
+                            <article role="article" className="article-1">
+                                <h3>Quis reprehenderit:</h3>
+                                <p>Irure voluptate non non est sunt veniam reprehenderit proident officia nulla.</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article role="article" className="article-2">
+                                <h3>Id et:</h3>
+                                <p>Consectetur deserunt eu quis cillum ut pariatur tempor nulla in enim nostrud.</p>
+                            </article>
+                        </li>
+                        <li>
+                            <article role="article" className="article-3">
+                                <h3>Sit sit:</h3>
+                                <p>anim voluptate consequat sint ex magna.</p>
+                            </article>
+                        </li>
+                    </ul>
+                <section className="education">
+                    <h2>
+                        <ul>
+                            <li>
+                                <article role="article" className="article-1">
+                                    <h3>Quis reprehenderit:</h3>
+                                    <p>Irure voluptate non non est sunt veniam reprehenderit proident officia nulla.</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article role="article" className="article-2">
+                                    <h3>Id et:</h3>
+                                    <p>Consectetur deserunt eu quis cillum ut pariatur tempor nulla in enim nostrud.</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article role="article" className="article-3">
+                                    <h3>Sit sit:</h3>
+                                    <p>anim voluptate consequat sint ex magna.</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </h2>
+                </section>
+            </Main>,
+            document.querySelector('#application-main')
+        );
+        ReactDOM.render(
+            <Footer>
+                <img src="http://fallinpets.com/wp-content/uploads/2016/09/cat-funny.jpg" className="img"/>
+                <section className="personal-info">
+                    <h2>info</h2>
+                    <p>Sally Student</p>
+                    <p>999-999-9999</p>
+                    <p>123 wouldn't you like to know pl.
+                    <br/>America City, AC 99999</p>
+                    <a href="mailto:sally@thinkful.com">sally@thinkful.com</a>
+                </section>
+            </Footer>,
+            document.querySelector('#application-footer')
+        );
+    </script>
+
 </body>
 </html>
